@@ -2,7 +2,7 @@
 	"name":				"Unity WebVR Demo",
 	"short_name":		"WebVR Demo",
 	"description":		"demo",
-	"start_url":		"/",
+	"start_url":		"/unity-webgl/",
 	"display":			"standalone",
 	"orientation":		"any",
 	"background_color":	"#000",
