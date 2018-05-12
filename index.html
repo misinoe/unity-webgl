@@ -12,6 +12,12 @@
     <meta name="description" content="Complete interactive 3D scene demo made in Unity and exported to WebVR with the WebVR template of the Unity WebVR assets">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="styles/webvr.css">
+    <link rel="manifest" href="/manifest.json">
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js');
+      }
+    </script>
     <script src="lib/telemetry.js"></script>
     <script>
       MozillaResearch.telemetry.start({
