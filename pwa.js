@@ -1,18 +1,19 @@
 !(() => {
-  let defferEvent;
-  window.addEventListener('beforeinstallprompt', e => {
-    console.log('beforeinstallprompt', e);
-    defferEvent = e;
-    e.preventDefault();
-    return false;
-  });
-
   window.addEventListener('load', e => {
-    console.log('load', e);
+    let defferEvent;
     const installButton = document.getElementById('installButton');
     installButton.hidden = true;
-    installButton.addEventListener('click', async e => {
+    
+    window.addEventListener('beforeinstallprompt', e => {
+      console.log('beforeinstallprompt', e);
       delete installButton.hidden;
+      defferEvent = e;
+      e.preventDefault();
+      return false;
+    });
+
+    installButton.addEventListener('click', async e => {
+      installButton.hidden = true;
       console.log('click', e);
       await defferEvent.prompt();
       const result = await defferEvent.userChoise;
