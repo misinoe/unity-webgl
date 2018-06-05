@@ -3,10 +3,10 @@
     let defferEvent;
     const installButton = document.getElementById('installButton');
     installButton.hidden = true;
-    
+
     window.addEventListener('beforeinstallprompt', e => {
       console.log('beforeinstallprompt', e);
-      delete installButton.hidden;
+      installButton.hidden = false;
       defferEvent = e;
       e.preventDefault();
       return false;
